@@ -1,30 +1,35 @@
 //645. Set Mismatch
 ///645-setMismatch-findErrorNums-set
 
+//11/15/2020 Sun
+////////////////////******************* my own answer w harpreet *********************//////////////////////
+/////////******** compare the supposed num arr with the current num as an obj  *********////////////
 
 var findErrorNums = function(nums) {
     let result = []
 
     let len = nums.length     
     let obj = {}
-   for(let i = 0; i < len; i++){
+   for(let i = 0; i < len; i++){ //create the obj with current arr nums as keys
        if(!obj.hasOwnProperty([nums[i]])) obj[nums[i]] = 1
        else 
        {
-           obj[nums[i]] = obj[nums[i]] +1
-        result.push(nums[i])
+        obj[nums[i]] = obj[nums[i]] +1
+        result.push(nums[i]) //if the val 2 then it's repeated num so add it to the result.
        }
    }
    console.log(obj)
 
-   for(let i = 1; i <= len; i++){
-       if(!obj.hasOwnProperty(i)){
-           result.push(i)
+   for(let i = 1; i <= len; i++){ //suposed num array
+       if(!obj.hasOwnProperty(i)){ //if the current obj doesn't have the key num
+           result.push(i) //this is the missing num 
        }
    }
    return result
 }
 
+//time: O(n) 
+//space: O(n)
 
 
 
