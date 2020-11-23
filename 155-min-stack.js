@@ -27,9 +27,10 @@
 // minStack.getMin(); // return -2
 
 
+
 var MinStack = function() {
-    this.stack = [];
-  this.min = [];
+    this.stack = []; //initialize data structure
+    this.min = []; //initialize data structure
 };
 
 MinStack.prototype.push = function(x) {
@@ -50,5 +51,5 @@ MinStack.prototype.top = function() {
 
 
 MinStack.prototype.getMin = function() {
-  return this.min[this.min.length-1]
+  return this.min[this.min.length-1] //why the last element? why can't I just do this.min[0] ?
 };
