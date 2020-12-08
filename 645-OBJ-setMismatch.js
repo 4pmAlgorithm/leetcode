@@ -41,6 +41,13 @@ var findErrorNums = function(nums) {
 //space: O(n)
 
 
+//findErrorNums([3,2,3,4,6,5])//[3,1] 
+//findErrorNums([1,1])//[1,2]
+//findErrorNums([1,3,3]) //[3,2] 
+//findErrorNums([1,2,2,4])//[2,3]
+//findErrorNums([2,2])//[2,1]
+//findErrorNums([3,2,2])//[2,1] 
+findErrorNums([1,5,3,2,2,7,6,4,8,9])//[2,10]
 
 
 // //////////////////******************* suppose total / map/set *********************//////////////////////

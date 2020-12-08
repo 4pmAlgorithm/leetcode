@@ -1,3 +1,37 @@
+//12/07/2020
+//given a string, find the first non repeating character and return the index
+
+function first(str){
+
+  let obj = {}
+  
+  for(let i = 0; i < str.length; i++){
+    if(!obj.hasOwnProperty(str[i])) {
+      obj[str[i]] = 1
+    }else{
+      obj[str[i]] = obj[str[i]] +1
+    }
+  }
+
+  for(let i = 0; i < str.length; i++){
+   
+   if(obj[str[i]] ===1){
+      return i
+    }
+  }
+}
+
+// time: O(n)
+// space: O(1) //bc the alphabet contains only 26 letters.
+
+
+//first("leetcode") //0
+first("loveleetcode")//2
+
+
+
+
+
 //11/14/2020 Sat w Vicky 
 //https://leetcode.com/problems/first-unique-character-in-a-string/
 

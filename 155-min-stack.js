@@ -36,6 +36,7 @@ var MinStack = function() {
 MinStack.prototype.push = function(x) {
   if(!this.min.length) this.min.push(x);
   else this.min.push(Math.min(x, this.getMin()));
+  
   this.stack.push(x)
 };
 
