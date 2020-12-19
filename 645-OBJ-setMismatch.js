@@ -48,7 +48,8 @@ var findErrorNums = function(nums) {
 //findErrorNums([2,2])//[2,1]
 //findErrorNums([3,2,2])//[2,1] 
 findErrorNums([1,5,3,2,2,7,6,4,8,9])//[2,10]
-
+//what if the given array is not sorted?
+//what if the supposed number is at the end?
 
 // //////////////////******************* suppose total / map/set *********************//////////////////////
 //https://www.geeksforgeeks.org/find-the-missing-number/
