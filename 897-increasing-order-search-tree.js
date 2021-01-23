@@ -3,51 +3,68 @@
 // //DEC 22nd algo with Diana
 // //DEC 20th algo w/ Diana
 
-/**
- * Definition for a binary tree node.
- 
 
- */
-/**
- * @param {TreeNode} root
- * @return {TreeNode}
-  
- */
-
-function TreeNode(val, left, right) {
+ function TreeNode(val, left, right) {
     this.val = (val===undefined ? 0 : val)
     this.left = (left===undefined ? null : left)
     this.right = (right===undefined ? null : right)
 }
 
- var increasingBST = function(root) { //[5,1,7]
-    let result =  []
 
-    function inOrder(node){
-        if(!node)return;
-        inOrder(node.left);
-        result.push(node.val);
-        inOrder(node.right)
-
-    }
-    inOrder(root);
-    console.log(result)
-
-    let tempNode = new TreeNode(0);
-    let returnNode = tempNode;
-
-    for(let i = 0; i < result.length; i++){
-        tempNode.right = new TreeNode(result[i]);
-        tempNode = tempNode.right
+var increasingBST = function(root) {
+    if (!root) {
+      return root;
     }
     
-    return returnNode.right
- }
+    const leftRoot = increasingBST(root.left);
+    root.left = null;
+    root.right = increasingBST(root.right);
+    
+    if (!leftRoot) {
+      return root;
+    }
+    
+    let lastLeftNode = leftRoot;
+    while (lastLeftNode.right) {
+      lastLeftNode = lastLeftNode.right;
+    }
+    
+    lastLeftNode.right = root;
+    return leftRoot;
+};
 
 
 
 
 
+//  var increasingBST = function(root) { //[5,1,7]
+//     let result =  []
+
+//     function inOrder(node){
+//         if(!node)return;
+//         inOrder(node.left);
+//         result.push(node.val);
+//         inOrder(node.right)
+
+//     }
+//     inOrder(root);
+//     console.log(result)
+
+//     let tempNode = new TreeNode(0);
+//     let returnNode = tempNode;
+
+//     for(let i = 0; i < result.length; i++){
+//         tempNode.right = new TreeNode(result[i]);
+//         tempNode = tempNode.right
+//     }
+    
+//     return returnNode.right
+//  }
+
+
+
+
+/////////////////////////////////////
 // var increasingBST = function(root) { //[5,1,7]
 //     if(!root) return null;
 //     let stack = [], newRoot = null, newTree = null;
