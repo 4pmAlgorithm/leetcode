@@ -48,6 +48,8 @@ var findErrorNums = function(nums) {
 //findErrorNums([2,2])//[2,1]
 //findErrorNums([3,2,2])//[2,1] 
 findErrorNums([1,5,3,2,2,7,6,4,8,9])//[2,10]
+[1,2,2,3,4,5,6,7,8,9]//[2, 10]
+ 1,2,3,4,5,6,7,8,9,10
 //what if the given array is not sorted?
 //what if the supposed number is at the end?
 
