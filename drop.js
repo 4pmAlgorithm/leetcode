@@ -1,13 +1,17 @@
+//set
 function solution (wordList, keypads){
     let result = []
     let count = 0 
+
     for(let i = 0; i < keypads.length; i++){ //keypadspad outer loop  
-      let newSet = new Set(keypads[i]) 
-      console.log(newSet)
+      let keypadsSet = new Set(keypads[i]) 
+      console.log(keypadsSet)
       let setHasChar = false 
+
       for(let j = 0; j < wordList.length; j++){//inner loop wordList loop 
+        
           for(let k = 0; k < wordList[j].length; k++){ //each wordList char
-            if(newSet.has(wordList[j][k])){
+            if(keypadsSet.has(wordList[j][k])){
               console.log(wordList[j][k])
               setHasChar = true
             } else {
