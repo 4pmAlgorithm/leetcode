@@ -29,7 +29,6 @@ function solution (wordList, keypads){
             //   break;
             // }
 
-
             if(wordList[j].includes(keypads[i][0]) && setHasChar && k === wordList[j].length-1 ){
               count += 1      
             }
