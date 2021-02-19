@@ -24,6 +24,6 @@ function solution (wordList, keypads){
     }//end of keypadspad outer loop
     return result
   }
-  // solution(['APPLE', 'PLEAS', 'PLEASE'], 
-  // ['AELWXYZ', 'AELPXYZ', 'AELPSXY', 'SAELPRT', 'XAEBKSY'] )
+  solution(['APPLE', 'PLEAS', 'PLEASE'], 
+  ['AELWXYZ', 'AELPXYZ', 'AELPSXY', 'SAELPRT', 'XAEBKSY'] )
   // Expected output: [0, 1, 3, 2, 0]
