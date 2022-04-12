@@ -11,11 +11,97 @@
 // Output: [0,1]
 // Explanation: Because nums[0] + nums[1] == 9, we return [0, 1].
 
+//9 4/12/2022 10:45-10:46am 1min
+//8 4/11/2022 1:44pm - 1:47pm
+//6 4/11/2022 1:21pm - 1:36pm
 //5 03/28/2022 4:55pm - 5:15 gave up and looked at answer
 //4 March/09/2022 5:34PM - 5:41 couldn't solve it so looked at solution
 //3
 //2
 //1
+
+
+//9 4/12/2022 10:45-10:46am 1min
+function twoSum (nums, target){
+    
+    let obj = {}
+    
+    for(let i=0; i <nums.length; i++){
+    
+        let sub = target-nums[i]
+        if(obj.hasOwnProperty(sub)){
+            return [obj[sub], i]
+        }
+        obj[nums[i]] = i;
+    }
+    return []
+}
+
+
+//8 4/11/2022 1:44pm - 1:47pm
+
+function twoSum (nums, target){
+    
+    let obj = {}; //create an empty object to store key/val pairs
+    
+    for(let i=0; i<nums.length; i++){ //iterate the nums array
+        
+        let num = nums[i] //store each number in num variable
+        
+        let sub = target-num //store subtract, target minus num
+        
+        if(obj.hasOwnProperty(sub)){ //before storing key=num/value=index in the obj, if it already exist, then return it
+            return [obj[sub], i]
+        }
+
+        obj[num] = i //key=num/value=index in the obj
+    }
+    return [] //return empty array if nothing exists
+}
+
+
+
+//7 4/11/2022 1:36 - 1:44pm
+function twoSum (nums, target){
+    let obj = {}
+
+    for(let i=0; i<nums.length; i++){
+        let num = nums[i];
+        let sub = target-num
+        if(obj.hasOwnProperty(sub)){
+            return [obj[sub], i];
+        }
+        obj[num] = i
+    }
+    return []
+}
+
+
+
+//6 4/11/2022 1:21pm - 1:36pm but this solution is slow
+var twoSum = function(nums, target) {
+  
+    let obj = {};
+
+    for(let i=0; i < nums.length; i++){
+        obj[nums[i]] = i;    
+    }
+    console.log(obj)
+    
+    for(let i=0; i< nums.length; i++){
+        let sub = target-nums[i]
+        console.log(sub)
+        
+        if( i === obj[sub]) continue;
+       
+        if(obj.hasOwnProperty(sub)){
+            console.log([i, obj[sub]])
+            return [i, obj[sub]]
+        }
+    }
+}
+
+
 
 
 function twoSum(arr, target){
