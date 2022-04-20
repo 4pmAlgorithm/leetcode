@@ -11,6 +11,8 @@
 // Output: [0,1]
 // Explanation: Because nums[0] + nums[1] == 9, we return [0, 1].
 
+//11 4/13/2022 teaching material
+//10 4/13/2022 1:12pm - 1:14pm
 //9 4/12/2022 10:45-10:46am 1min
 //8 4/11/2022 1:44pm - 1:47pm
 //6 4/11/2022 1:21pm - 1:36pm
@@ -19,6 +21,46 @@
 //3
 //2
 //1
+
+
+
+//11
+
+function twoSum (nums, target){
+    let obj = {}   //create an empty object to store key/val pairs
+   
+   for(let i=0; i < nums.length; i++){ //iterate the nums array
+       obj[nums[i]] = i  //store key as num : value as index in the obj
+   }
+   
+   for(let i=0; i<nums.length; i++){  //iterate the nums array again
+       let diff = target - nums[i]  //store the difference from the target minus num
+       
+       if(obj[diff]===i)continue; 
+       if(obj.hasOwnProperty(diff)){   //if the obj has diff number as a key, then we found the answer
+           return [obj[diff], i]  //so return the value of the object keys, diff and current i
+       }
+   }
+   
+   console.log(obj)
+   return []
+}
+But the above solution is slow because it's iterating twice using the same for loop. We can use the same for loop to get our answer faster.
+
+//FASTER SOLUTION
+function twoSum (nums, target){
+    let obj = {}   //create an empty object to store key/val pairs
+   
+   for(let i=0; i<nums.length; i++){  //iterate the nums array 
+       let diff = target - nums[i]  //store the difference from the target minus num
+       
+       if(obj.hasOwnProperty(diff)){   //if the obj has diff number as a key, then we found the answer
+           return [obj[diff], i]  //so return the value of the object keys, diff and current i
+       }
+        obj[nums[i]] = i  //<------- store key as num : value as index in the obj  
+   }
+   return []
+}
 
 
 //9 4/12/2022 10:45-10:46am 1min
